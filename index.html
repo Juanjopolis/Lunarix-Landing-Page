@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lunarix — Equipo de desarrollo de software orientado al negocio. Web, Mobile, IA y Software a Medida. Mendoza, Argentina.">
+  <title>Lunarix — Software Development</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2309090B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='58' font-family='Inter,sans-serif' font-weight='800' fill='white'>L</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">LUNARIX</a>
+
+        <ul class="nav-links">
+          <li><a href="#services"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a></li>
+          <li><a href="#about"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="#process"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a></li>
+          <li><a href="#team"><span class="lang-es">Equipo</span><span class="lang-en">Team</span></a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+            <span id="langEs" class="active">ES</span> | <span id="langEn">EN</span>
+          </button>
+          <a href="#contact" class="nav-cta">
+            <span class="lang-es">Hablemos</span>
+            <span class="lang-en">Let's talk</span>
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">✕</button>
+    <a href="#services" class="mobile-link"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a>
+    <a href="#about"    class="mobile-link"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a>
+    <a href="#process"  class="mobile-link"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a>
+    <a href="#team"     class="mobile-link"><span class="lang-es">Equipo</span><span class="lang-en">Team</span></a>
+    <a href="#contact"  class="mobile-link"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
+    <div class="mobile-lang">
+      <button id="mBtnEs" class="active" onclick="setLang('es')">ES</button>
+      <button id="mBtnEn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero">
+    <!-- Animated background orbs — animated in CSS, no JS -->
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <div class="container">
+      <!-- Hero enter animations handled in CSS to avoid JS-timing flicker -->
+      <div class="hero-eyebrow">
+        <span class="lang-es">Equipo de Desarrollo de Software &nbsp;·&nbsp; Mendoza, Argentina</span>
+        <span class="lang-en">Software Development Team &nbsp;·&nbsp; Mendoza, Argentina</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="lang-es">Software que<br>impulsa tu<br><span class="muted">negocio.</span></span>
+        <span class="lang-en">Software that<br>drives your<br><span class="muted">business.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        <span class="lang-es">No solo escribimos código. Entendemos tus desafíos de negocio y construimos soluciones que generan resultados reales.</span>
+        <span class="lang-en">We don't just write code. We understand your business challenges and engineer solutions that create real impact.</span>
+      </p>
+
+      <div class="hero-ctas">
+        <a href="https://wa.me/543875605823" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <!-- WhatsApp icon -->
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="lang-es">Hablemos por WhatsApp</span>
+          <span class="lang-en">Chat on WhatsApp</span>
+        </a>
+        <a href="#team" class="btn-secondary">
+          <span class="lang-es">Conocé el equipo</span>
+          <span class="lang-en">Meet the team</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICES
+  ============================== -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">
+          <span class="lang-es">Qué Ofrecemos</span>
+          <span class="lang-en">What we offer</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-es">Nuestros Servicios</span>
+          <span class="lang-en">Our Services</span>
+        </h2>
+        <p class="section-sub">
+          <span class="lang-es">Soluciones tecnológicas completas para cada etapa de tu negocio.</span>
+          <span class="lang-en">Complete technology solutions for every stage of your business.</span>
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Web Development -->
+        <div class="service-card fade-in delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-name">
+            <span class="lang-es">Desarrollo Web</span>
+            <span class="lang-en">Web Development</span>
+          </h3>
+          <p class="service-desc">
+            <span class="lang-es">Desde landing pages hasta aplicaciones web complejas, construimos experiencias digitales que convierten y escalan con tu negocio.</span>
+            <span class="lang-en">From landing pages to complex web applications, we build digital experiences that convert and scale with your business.</span>
+          </p>
+        </div>
+
+        <!-- Mobile Apps -->
+        <div class="service-card fade-in delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="service-name">
+            <span class="lang-es">Apps Móviles</span>
+            <span class="lang-en">Mobile Apps</span>
+          </h3>
+          <p class="service-desc">
+            <span class="lang-es">Aplicaciones iOS y Android diseñadas para performance, usabilidad y resultados de negocio concretos.</span>
+            <span class="lang-en">iOS and Android applications designed for performance, usability, and concrete business results.</span>
+          </p>
+        </div>
+
+        <!-- Custom Software -->
+        <div class="service-card fade-in delay-3">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3 class="service-name">
+            <span class="lang-es">Software a Medida</span>
+            <span class="lang-en">Custom Software</span>
+          </h3>
+          <p class="service-desc">
+            <span class="lang-es">Soluciones de software diseñadas alrededor de tus flujos de trabajo, procesos y objetivos únicos de negocio.</span>
+            <span class="lang-en">Software solutions built around your unique workflows, processes, and business objectives.</span>
+          </p>
+        </div>
+
+        <!-- AI & Automation -->
+        <div class="service-card fade-in delay-4">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9"  y1="1"  x2="9"  y2="4"/>
+              <line x1="15" y1="1"  x2="15" y2="4"/>
+              <line x1="9"  y1="20" x2="9"  y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9"  x2="23" y2="9"/>
+              <line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1"  y1="9"  x2="4"  y2="9"/>
+              <line x1="1"  y1="14" x2="4"  y2="14"/>
+            </svg>
+          </div>
+          <h3 class="service-name">
+            <span class="lang-es">IA & Automatización</span>
+            <span class="lang-en">AI & Automation</span>
+          </h3>
+          <p class="service-desc">
+            <span class="lang-es">Integramos inteligencia artificial y automatización para eliminar tareas repetitivas y desbloquear nuevas eficiencias en tu operación.</span>
+            <span class="lang-en">We integrate artificial intelligence and automation to eliminate repetitive tasks and unlock new operational efficiencies.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       WHY LUNARIX
+  ============================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-in">
+          <div class="section-label">
+            <span class="lang-es">Por qué elegirnos</span>
+            <span class="lang-en">Why choose us</span>
+          </div>
+          <h2 class="section-title">
+            <span class="lang-es">Por qué Lunarix</span>
+            <span class="lang-en">Why Lunarix</span>
+          </h2>
+          <p class="about-statement">
+            <span class="lang-es">No somos una fábrica de código. Somos un equipo de profesionales que entiende que <strong>la tecnología debe servir al negocio</strong>, no al revés. Cada solución que diseñamos nace de entender profundamente tu industria, tus usuarios y tus metas.</span>
+            <span class="lang-en">We're not a code factory. We're a team of professionals who understand that <strong>technology must serve the business</strong>, not the other way around. Every solution we design starts with a deep understanding of your industry, users, and goals.</span>
+          </p>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar fade-in delay-1">
+            <div class="pillar-num">01</div>
+            <div>
+              <h3 class="pillar-title">
+                <span class="lang-es">Enfoque en el negocio</span>
+                <span class="lang-en">Business-first approach</span>
+              </h3>
+              <p class="pillar-desc">
+                <span class="lang-es">Antes de escribir una sola línea, entendemos tu negocio, tu industria y tus usuarios.</span>
+                <span class="lang-en">Before writing a single line, we understand your business, industry, and users.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar fade-in delay-2">
+            <div class="pillar-num">02</div>
+            <div>
+              <h3 class="pillar-title">
+                <span class="lang-es">Equipo multidisciplinario</span>
+                <span class="lang-en">Full multidisciplinary team</span>
+              </h3>
+              <p class="pillar-desc">
+                <span class="lang-es">Cubrimos diseño, desarrollo web, mobile, IA y QA bajo un mismo techo.</span>
+                <span class="lang-en">We cover design, web, mobile, AI and QA under one roof.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar fade-in delay-3">
+            <div class="pillar-num">03</div>
+            <div>
+              <h3 class="pillar-title">
+                <span class="lang-es">Comunicación transparente</span>
+                <span class="lang-en">Transparent communication</span>
+              </h3>
+              <p class="pillar-desc">
+                <span class="lang-es">Sin sorpresas. Reportes regulares, demos frecuentes y presupuestos claros desde el inicio.</span>
+                <span class="lang-en">No surprises. Regular reports, frequent demos, and clear budgets from day one.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="pillar fade-in delay-4">
+            <div class="pillar-num">04</div>
+            <div>
+              <h3 class="pillar-title">
+                <span class="lang-es">Código de calidad</span>
+                <span class="lang-en">Quality code</span>
+              </h3>
+              <p class="pillar-desc">
+                <span class="lang-es">Arquitecturas escalables y código limpio pensado para crecer con tu negocio.</span>
+                <span class="lang-en">Scalable architectures and clean code built to grow alongside your business.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROCESS
+  ============================== -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">
+          <span class="lang-es">Metodología</span>
+          <span class="lang-en">Methodology</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-es">Cómo trabajamos</span>
+          <span class="lang-en">How we work</span>
+        </h2>
+        <p class="section-sub">
+          <span class="lang-es">Un proceso probado que garantiza entregas de calidad sin sorpresas.</span>
+          <span class="lang-en">A proven process that guarantees quality delivery with no surprises.</span>
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step fade-in delay-1">
+          <div class="step-num">01</div>
+          <h3 class="step-title"><span class="lang-es">Descubrimiento</span><span class="lang-en">Discovery</span></h3>
+          <p class="step-desc">
+            <span class="lang-es">Analizamos tu negocio, usuarios y objetivos para entender el problema real.</span>
+            <span class="lang-en">We analyze your business, users and goals to understand the real problem.</span>
+          </p>
+        </div>
+
+        <div class="process-step fade-in delay-2">
+          <div class="step-num">02</div>
+          <h3 class="step-title"><span class="lang-es">Planificación</span><span class="lang-en">Planning</span></h3>
+          <p class="step-desc">
+            <span class="lang-es">Diseñamos la hoja de ruta técnica y el alcance con total claridad.</span>
+            <span class="lang-en">We design the technical roadmap and project scope with total clarity.</span>
+          </p>
+        </div>
+
+        <div class="process-step fade-in delay-3">
+          <div class="step-num">03</div>
+          <h3 class="step-title"><span class="lang-es">Desarrollo</span><span class="lang-en">Development</span></h3>
+          <p class="step-desc">
+            <span class="lang-es">Ciclos ágiles con demos frecuentes y retroalimentación continua.</span>
+            <span class="lang-en">Agile cycles with frequent demos and continuous feedback.</span>
+          </p>
+        </div>
+
+        <div class="process-step fade-in delay-4">
+          <div class="step-num">04</div>
+          <h3 class="step-title"><span class="lang-es">Lanzamiento</span><span class="lang-en">Launch</span></h3>
+          <p class="step-desc">
+            <span class="lang-es">Testing riguroso y despliegue controlado para una salida exitosa.</span>
+            <span class="lang-en">Rigorous testing and controlled deployment for a successful go-live.</span>
+          </p>
+        </div>
+
+        <div class="process-step fade-in delay-5">
+          <div class="step-num">05</div>
+          <h3 class="step-title"><span class="lang-es">Soporte</span><span class="lang-en">Support</span></h3>
+          <p class="step-desc">
+            <span class="lang-es">Mantenimiento, monitoreo y evolución continua del producto.</span>
+            <span class="lang-en">Maintenance, monitoring and continuous product evolution.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TEAM
+  ============================== -->
+  <section id="team">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">
+          <span class="lang-es">Quiénes somos</span>
+          <span class="lang-en">Who we are</span>
+        </div>
+        <h2 class="section-title">
+          <span class="lang-es">El equipo</span>
+          <span class="lang-en">The team</span>
+        </h2>
+        <p class="section-sub">
+          <span class="lang-es">Profesionales multidisciplinarios con foco en resultados reales.</span>
+          <span class="lang-en">Multidisciplinary professionals focused on real results.</span>
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Joaquin Ortega -->
+        <div class="team-card fade-in delay-1">
+          <div class="avatar" style="background:#18181B;">JO</div>
+          <div class="member-name">Joaquin Ortega</div>
+          <div class="member-role">CEO &amp; Co-founder</div>
+          <div class="role-tags">
+            <span class="tag">Full Stack Dev</span>
+            <span class="tag">Software Architect</span>
+            <span class="tag">Project Manager</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Más de un año de experiencia como desarrollador de sistemas en entornos empresariales, con especialización en entender y traducir las necesidades del negocio en soluciones tecnológicas concretas.</span>
+            <span class="lang-en">Over a year of experience as a systems developer in business environments, specializing in understanding and translating business needs into concrete technological solutions.</span>
+          </p>
+        </div>
+
+        <!-- Agustín Astie -->
+        <div class="team-card fade-in delay-2">
+          <div class="avatar" style="background:#27272A;">AA</div>
+          <div class="member-name">Agustín Astie</div>
+          <div class="member-role">CTO &amp; Co-founder</div>
+          <div class="role-tags">
+            <span class="tag">Full Stack Dev</span>
+            <span class="tag">AI Engineer</span>
+            <span class="tag">Tech Lead</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Desarrollador full stack certificado con especialización en inteligencia artificial y redes neuronales. Lidera la arquitectura técnica y la integración de soluciones de IA en los proyectos del equipo.</span>
+            <span class="lang-en">Certified full stack developer with specialization in artificial intelligence and neural networks. Leads technical architecture and AI solution integration across the team's projects.</span>
+          </p>
+        </div>
+
+        <!-- Matías Martínez -->
+        <div class="team-card fade-in delay-3">
+          <div class="avatar" style="background:#3F3F46;">MM</div>
+          <div class="member-name">Matías Martínez</div>
+          <div class="member-role"><span class="lang-es">Head of Product</span><span class="lang-en">Head of Product</span></div>
+          <div class="role-tags">
+            <span class="tag">UI/UX Designer</span>
+            <span class="tag">Product Designer</span>
+            <span class="tag">Frontend Dev</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Especialista en diseño de interfaces y experiencia de usuario. Crea productos digitales intuitivos y visualmente sólidos, asegurando que cada pantalla comunique claramente y guíe al usuario de forma natural.</span>
+            <span class="lang-en">Interface design and user experience specialist. Creates intuitive and visually solid digital products, ensuring every screen communicates clearly and guides users naturally.</span>
+          </p>
+        </div>
+
+        <!-- Luciano López -->
+        <div class="team-card fade-in delay-4">
+          <div class="avatar" style="background:#52525B;">LL</div>
+          <div class="member-name">Luciano López</div>
+          <div class="member-role"><span class="lang-es">Head of Product</span><span class="lang-en">Head of Product</span></div>
+          <div class="role-tags">
+            <span class="tag">UI/UX Designer</span>
+            <span class="tag">Mobile Developer</span>
+            <span class="tag">Frontend Dev</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Diseñador de interfaces con foco en aplicaciones móviles. Combina criterio visual con sensibilidad técnica para construir experiencias fluidas que funcionan igual de bien en pantallas pequeñas que en web.</span>
+            <span class="lang-en">Interface designer focused on mobile applications. Combines visual judgment with technical sensibility to build seamless experiences that work equally well on small screens and web.</span>
+          </p>
+        </div>
+
+        <!-- Francisco Aguilera -->
+        <div class="team-card fade-in delay-1">
+          <div class="avatar" style="background:#71717A;">FA</div>
+          <div class="member-name">Francisco Aguilera</div>
+          <div class="member-role">Frontend Developer</div>
+          <div class="role-tags">
+            <span class="tag">QA Engineer</span>
+            <span class="tag">Tech Support</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Desarrollador frontend con atención al detalle visual y la calidad. Se encarga de que cada interfaz se vea y funcione exactamente como fue diseñada, en cualquier dispositivo y navegador.</span>
+            <span class="lang-en">Frontend developer with strong attention to visual detail and quality. Ensures every interface looks and works exactly as designed, on any device and browser.</span>
+          </p>
+        </div>
+
+        <!-- Santiago Carrera -->
+        <div class="team-card fade-in delay-2">
+          <div class="avatar" style="background:#3F3F46;">SC</div>
+          <div class="member-name">Santiago Carrera</div>
+          <div class="member-role">Frontend &amp; Mobile Developer</div>
+          <div class="role-tags">
+            <span class="tag">Frontend Dev</span>
+            <span class="tag">Mobile Dev</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Desarrollador especializado en interfaces responsivas y apps móviles nativas. Apasionado por construir productos que se sientan rápidos, modernos y agradables de usar en cualquier plataforma.</span>
+            <span class="lang-en">Developer specialized in responsive interfaces and native mobile apps. Passionate about building products that feel fast, modern, and enjoyable to use on any platform.</span>
+          </p>
+        </div>
+
+        <!-- Juan Pablo Gerino -->
+        <div class="team-card fade-in delay-3">
+          <div class="avatar" style="background:#27272A;">JPG</div>
+          <div class="member-name">Juan Pablo Gerino</div>
+          <div class="member-role">Backend Developer</div>
+          <div class="role-tags">
+            <span class="tag">Software Architect</span>
+            <span class="tag">QA Engineer</span>
+          </div>
+          <p class="member-bio">
+            <span class="lang-es">Desarrollador backend con experiencia en sistemas internos de pagos, portales de usuarios y arquitecturas de software robustas orientadas a la escalabilidad y la seguridad.</span>
+            <span class="lang-en">Backend developer with experience in internal payment systems, user portals, and robust software architectures focused on scalability and security.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CONTACT + FOOTER
+  ============================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner fade-in">
+        <h2 class="contact-title">
+          <span class="lang-es">¿Tenés un proyecto<br>en mente?</span>
+          <span class="lang-en">Have a project<br>in mind?</span>
+        </h2>
+        <p class="contact-sub">
+          <span class="lang-es">Contanos sobre tu idea. Analizamos tu caso sin costo y te respondemos con una propuesta concreta.</span>
+          <span class="lang-en">Tell us about your idea. We'll analyze your case at no cost and respond with a concrete proposal.</span>
+        </p>
+
+        <div class="contact-channels">
+          <a href="https://wa.me/543875605823" target="_blank" rel="noopener noreferrer" class="ch-btn wa">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            WhatsApp
+          </a>
+
+          <a href="mailto:lunarixlab@gmail.com" class="ch-btn mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+            </svg>
+            lunarixlab@gmail.com
+          </a>
+
+          <a href="tel:+543875605823" class="ch-btn tel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            (+54) 387 560 5823
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-sep"></div>
+
+      <div class="footer-row">
+        <div class="footer-logo">LUNARIX</div>
+
+        <!-- Social links — update hrefs with your actual handles -->
+        <div class="social-links">
+          <a href="https://www.instagram.com/lunarixlab" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@lunarixlab" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          <span>© 2025 Lunarix. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+          <span style="color:#3F3F46; margin-top:0.2rem; display:block;">Mendoza, Argentina</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

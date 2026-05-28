@@ -1,0 +1,12 @@
+{
+  "name": "lunarix-web",
+  "version": "1.0.0",
+  "description": "Lunarix software development team website",
+  "scripts": {
+    "dev": "browser-sync start --server --files 'index.html, css/**/*.css, js/**/*.js' --port 3000 --no-notify --no-open",
+    "start": "browser-sync start --server --files 'index.html, css/**/*.css, js/**/*.js' --port 3000"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}
