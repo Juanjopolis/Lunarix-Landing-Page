@@ -1,7 +1,41 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx playwright *)",
+      "Bash(rm -f shot.js shot2.js shot_hero.png shot_team.png shot_contact.png shot_contact2.png shot_about.png shot_nav_top.png)",
+      "Bash(git checkout *)",
+      "Bash(rm -rf node_modules/playwright node_modules/.bin/playwright*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(cd \"c:/Users/USER/OneDrive/PC Programacion/Lunarix/LunarixWeb\" && npm run dev > /tmp/devserver.log 2>&1 & *)",
+      "Read(//tmp/**)",
+      "Bash(node shot3.js)",
+      "Bash(curl -s http://localhost:3000 -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(rm -f shot3.js shot_about2.png shot_team2.png shot_team3.png)",
+      "Bash(rm -rf node_modules/playwright node_modules/.bin/playwright* node_modules/playwright-core)",
+      "Bash(rm -f shot4.js shot_services.png shot_about3.png shot_process.png shot_team4.png)",
+      "Bash(rm -f shot6.js shot7.js shot_*.png)",
+      "Bash(rm -f shot8.js shot_*.png)",
+      "Bash(grep -n \"WHY LUNARIX\\\\|^.service-desc\\\\|position: relative;\\\\s*$\" css/styles.css)",
+      "Bash(rm -f shot10.js shot11.js shot12.js shot_*.png)",
+      "PowerShell($lines = Get-Content \"index.html\"; $new = $lines[0..217] + $lines[333..\\($lines.Length-1\\)]; Set-Content -Path \"index.html\" -Value $new -Encoding utf8)",
+      "Bash(netstat -ano)",
+      "Bash(cd \"c:\\\\Users\\\\USER\\\\OneDrive\\\\PC Programacion\\\\Lunarix\\\\LunarixWeb\" && npm run dev > /tmp/browsersync.log 2>&1 & *)",
+      "Bash(node verify_shot2.js)",
+      "Bash(rm -f verify_shot.js verify_shot2.js shot_*.png)",
+      "Bash(node verify3.js)",
+      "Bash(node v4.js)",
+      "Bash(rm -f v4.js v_hero.png)",
+      "Bash(node v5.js)",
+      "Bash(rm -f v5.js v_*.png)",
+      "Bash(node v6.js)",
+      "Bash(rm -f v6.js v_*.png)",
+      "Bash(node v7.js)",
+      "Bash(rm -f v7.js v_*.png)",
+      "Bash(node v8.js)",
+      "Bash(rm -f v8.js v_*.png)"
     ]
   }
 }
