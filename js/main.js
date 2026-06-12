@@ -203,3 +203,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+/* ============================
+   COOKIE CONSENT (Google Consent Mode v2)
+   Analytics stays denied until the user
+   explicitly accepts — opt-in model, in
+   line with Argentina's Ley 25.326.
+============================ */
+(function initCookieConsent() {
+  const banner = document.getElementById('cookieBanner');
+  const KEY = 'lx-cookie-consent';
+
+  function applyConsent(granted) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  function show() {
+    if (banner) requestAnimationFrame(() => banner.classList.add('show'));
+  }
+  function hide() {
+    if (banner) banner.classList.remove('show');
+  }
+
+  function setConsent(value) {
+    localStorage.setItem(KEY, value);
+    applyConsent(value === 'granted');
+    hide();
+  }
+
+  // First visit (no stored choice) → reveal the banner shortly after load
+  if (banner && !localStorage.getItem(KEY)) {
+    setTimeout(show, 700);
+  }
+
+  const acceptBtn = document.getElementById('cookieAccept');
+  const rejectBtn = document.getElementById('cookieReject');
+  if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent('granted'));
+  if (rejectBtn) rejectBtn.addEventListener('click', () => setConsent('denied'));
+
+  // Footer "Cookies" link re-opens the banner so the choice can be changed
+  document.querySelectorAll('.cookie-settings-link').forEach(link => {
+    link.addEventListener('click', e => { e.preventDefault(); show(); });
+  });
+})();

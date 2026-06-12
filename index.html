@@ -6,6 +6,32 @@
   <meta name="description" content="Lunarix — Equipo de desarrollo de software orientado al negocio. Web, Mobile, IA y Software a Medida. Mendoza, Argentina.">
   <title>Lunarix — Software Development</title>
 
+  <!-- Google tag (gtag.js) + Consent Mode v2 — analytics fires only after consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG68519ZDL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Default: deny analytics storage until the visitor opts in (Ley 25.326)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Honour a previously stored choice as early as possible
+    try {
+      if (localStorage.getItem('lx-cookie-consent') === 'granted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch (e) {}
+
+    gtag('config', 'G-VG68519ZDL', { 'anonymize_ip': true });
+  </script>
+
   <link rel="icon" type="image/png" href="lunarixlogo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -644,10 +670,55 @@
         <div class="footer-copy">
           <span>© 2025 Lunarix. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
           <span style="color:#6F6A8A; margin-top:0.2rem; display:block;">Mendoza, Argentina</span>
+          <span class="footer-legal">
+            <a href="privacidad.html"><span class="lang-es">Privacidad y Cookies</span><span class="lang-en">Privacy &amp; Cookies</span></a>
+            <span class="sep">·</span>
+            <a href="privacidad.html#terminos"><span class="lang-es">Términos</span><span class="lang-en">Terms</span></a>
+            <span class="sep">·</span>
+            <a href="#" class="cookie-settings-link"><span class="lang-es">Configurar cookies</span><span class="lang-en">Cookie settings</span></a>
+          </span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ==============================
+       COOKIE CONSENT BANNER
+  ============================== -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-inner">
+      <div class="cookie-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+          <path d="M8.5 8.5v.01"/>
+          <path d="M16 15.5v.01"/>
+          <path d="M12 12v.01"/>
+          <path d="M11 17v.01"/>
+          <path d="M7 14v.01"/>
+        </svg>
+      </div>
+      <div class="cookie-text">
+        <h3 class="cookie-title">
+          <span class="lang-es">Usamos cookies</span>
+          <span class="lang-en">We use cookies</span>
+        </h3>
+        <p>
+          <span class="lang-es">Utilizamos cookies de análisis (Google Analytics) para entender cómo se usa el sitio y mejorar tu experiencia. No se activan hasta que las aceptes. Más información en nuestra <a href="privacidad.html">Política de Privacidad y Cookies</a>.</span>
+          <span class="lang-en">We use analytics cookies (Google Analytics) to understand how the site is used and improve your experience. They stay off until you accept. Learn more in our <a href="privacidad.html">Privacy &amp; Cookie Policy</a>.</span>
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn reject" id="cookieReject" type="button">
+          <span class="lang-es">Rechazar</span>
+          <span class="lang-en">Reject</span>
+        </button>
+        <button class="cookie-btn accept" id="cookieAccept" type="button">
+          <span class="lang-es">Aceptar</span>
+          <span class="lang-en">Accept</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>

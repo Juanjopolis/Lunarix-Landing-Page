@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidad, Cookies y Términos y Condiciones de Lunarix. Tratamiento de datos personales conforme a la Ley 25.326 de Argentina.">
+  <meta name="robots" content="index, follow">
+  <title>Lunarix — Política de Privacidad y Cookies</title>
+
+  <!-- Google tag (gtag.js) + Consent Mode v2 — analytics fires only after consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG68519ZDL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Default: deny analytics storage until the visitor opts in (Ley 25.326)
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // Honour a previously stored choice as early as possible
+    try {
+      if (localStorage.getItem('lx-cookie-consent') === 'granted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    } catch (e) {}
+
+    gtag('config', 'G-VG68519ZDL', { 'anonymize_ip': true });
+  </script>
+
+  <link rel="icon" type="image/png" href="lunarixlogo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html#hero" class="nav-logo"><img src="LunarixPng.png" alt="Lunarix" class="nav-logo-img"></a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#services"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a></li>
+          <li><a href="productos.html"><span class="lang-es">Productos</span><span class="lang-en">Products</span></a></li>
+          <li><a href="index.html#about"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="index.html#process"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a></li>
+          <li><a href="index.html#team"><span class="lang-es">Equipo</span><span class="lang-en">Team</span></a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+            <span id="langEs" class="active">ES</span> | <span id="langEn">EN</span>
+          </button>
+          <a href="index.html#contact" class="nav-cta">
+            <span class="lang-es">Hablemos</span>
+            <span class="lang-en">Let's talk</span>
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">✕</button>
+    <a href="index.html#services" class="mobile-link"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a>
+    <a href="productos.html" class="mobile-link"><span class="lang-es">Productos</span><span class="lang-en">Products</span></a>
+    <a href="index.html#about"    class="mobile-link"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a>
+    <a href="index.html#process"  class="mobile-link"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a>
+    <a href="index.html#team"     class="mobile-link"><span class="lang-es">Equipo</span><span class="lang-en">Team</span></a>
+    <a href="index.html#contact"  class="mobile-link"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
+    <div class="mobile-lang">
+      <button id="mBtnEs" class="active" onclick="setLang('es')">ES</button>
+      <button id="mBtnEn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ==============================
+       LEGAL CONTENT
+  ============================== -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-content">
+        <a href="index.html" class="back-home-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span class="lang-es">Volver al inicio</span>
+          <span class="lang-en">Back to home</span>
+        </a>
+
+        <span class="legal-eyebrow">
+          <span class="lang-es">Información legal</span>
+          <span class="lang-en">Legal information</span>
+        </span>
+
+        <h1>
+          <span class="lang-es">Política de Privacidad y Cookies</span>
+          <span class="lang-en">Privacy &amp; Cookie Policy</span>
+        </h1>
+        <p class="legal-updated">
+          <span class="lang-es">Última actualización: 11 de junio de 2026</span>
+          <span class="lang-en">Last updated: June 11, 2026</span>
+        </p>
+
+        <!-- 1. Responsable -->
+        <h2>
+          <span class="lang-es">1. Responsable del tratamiento</span>
+          <span class="lang-en">1. Data controller</span>
+        </h2>
+        <p>
+          <span class="lang-es">El responsable del tratamiento de los datos personales recopilados a través de este sitio es <strong>Lunarix</strong>, equipo de desarrollo de software con sede en Mendoza, Argentina. Para cualquier consulta vinculada a tus datos personales o a esta política podés escribirnos a <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a>.</span>
+          <span class="lang-en">The party responsible for processing the personal data collected through this site is <strong>Lunarix</strong>, a software development team based in Mendoza, Argentina. For any inquiry regarding your personal data or this policy, you can reach us at <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a>.</span>
+        </p>
+        <p>
+          <span class="lang-es">Esta política se rige por la <strong>Ley N.° 25.326 de Protección de los Datos Personales</strong> de la República Argentina, su Decreto Reglamentario N.° 1558/2001 y las disposiciones de la Agencia de Acceso a la Información Pública (AAIP), autoridad de aplicación.</span>
+          <span class="lang-en">This policy is governed by <strong>Law No. 25.326 on the Protection of Personal Data</strong> of the Argentine Republic, its Regulatory Decree No. 1558/2001, and the provisions of the Agency for Access to Public Information (AAIP), the enforcement authority.</span>
+        </p>
+
+        <!-- 2. Datos que recopilamos -->
+        <h2>
+          <span class="lang-es">2. Qué datos recopilamos</span>
+          <span class="lang-en">2. What data we collect</span>
+        </h2>
+        <p>
+          <span class="lang-es">Recopilamos la mínima cantidad de datos necesaria para operar el sitio:</span>
+          <span class="lang-en">We collect the minimum amount of data necessary to operate the site:</span>
+        </p>
+        <ul>
+          <li>
+            <span class="lang-es"><strong>Datos de navegación (cookies de análisis):</strong> si prestás tu consentimiento, recopilamos datos estadísticos y anónimos sobre el uso del sitio mediante Google Analytics (páginas visitadas, duración, dispositivo aproximado, país/región y dirección IP anonimizada).</span>
+            <span class="lang-en"><strong>Browsing data (analytics cookies):</strong> if you give your consent, we collect anonymous statistical data about site usage through Google Analytics (pages visited, duration, approximate device, country/region, and anonymized IP address).</span>
+          </li>
+          <li>
+            <span class="lang-es"><strong>Datos de contacto:</strong> si decidís contactarnos por WhatsApp, correo electrónico o teléfono, tratamos los datos que voluntariamente nos proporciones (nombre, correo, teléfono y el contenido de tu mensaje) con el único fin de responder tu consulta.</span>
+            <span class="lang-en"><strong>Contact data:</strong> if you choose to contact us via WhatsApp, email, or phone, we process the data you voluntarily provide (name, email, phone, and the content of your message) for the sole purpose of responding to your inquiry.</span>
+          </li>
+        </ul>
+        <p>
+          <span class="lang-es">No recopilamos datos sensibles ni realizamos decisiones automatizadas que produzcan efectos jurídicos sobre vos.</span>
+          <span class="lang-en">We do not collect sensitive data nor make automated decisions that produce legal effects on you.</span>
+        </p>
+
+        <!-- 3. Finalidad y base legal -->
+        <h2>
+          <span class="lang-es">3. Finalidad y base legal del tratamiento</span>
+          <span class="lang-en">3. Purpose and legal basis for processing</span>
+        </h2>
+        <p>
+          <span class="lang-es">Tratamos tus datos para: (i) entender cómo se utiliza el sitio y mejorar su contenido y rendimiento, y (ii) responder a las consultas que nos envíes. La base legal es tu <strong>consentimiento libre, expreso e informado</strong> (art. 5 de la Ley 25.326), que otorgás al aceptar las cookies o al contactarnos voluntariamente. Podés retirar tu consentimiento en cualquier momento.</span>
+          <span class="lang-en">We process your data to: (i) understand how the site is used and improve its content and performance, and (ii) respond to the inquiries you send us. The legal basis is your <strong>free, express, and informed consent</strong> (art. 5 of Law 25.326), which you grant by accepting cookies or by voluntarily contacting us. You may withdraw your consent at any time.</span>
+        </p>
+
+        <!-- 4. Cookies -->
+        <h2>
+          <span class="lang-es">4. Política de Cookies</span>
+          <span class="lang-en">4. Cookie Policy</span>
+        </h2>
+        <p>
+          <span class="lang-es">Las cookies son pequeños archivos que se almacenan en tu dispositivo. Este sitio <strong>no instala cookies de análisis hasta que las aceptás</strong> expresamente en el banner de consentimiento. Si las rechazás, Google Analytics permanece desactivado. Podés cambiar tu elección en cualquier momento desde el enlace <em>«Configurar cookies»</em> en el pie de página.</span>
+          <span class="lang-en">Cookies are small files stored on your device. This site <strong>does not install analytics cookies until you expressly accept them</strong> in the consent banner. If you reject them, Google Analytics remains disabled. You can change your choice at any time via the <em>"Cookie settings"</em> link in the footer.</span>
+        </p>
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th><span class="lang-es">Cookie</span><span class="lang-en">Cookie</span></th>
+              <th><span class="lang-es">Finalidad</span><span class="lang-en">Purpose</span></th>
+              <th><span class="lang-es">Duración</span><span class="lang-en">Duration</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>_ga</td>
+              <td><span class="lang-es">Google Analytics — distingue usuarios.</span><span class="lang-en">Google Analytics — distinguishes users.</span></td>
+              <td><span class="lang-es">2 años</span><span class="lang-en">2 years</span></td>
+            </tr>
+            <tr>
+              <td>_ga_VG68519ZDL</td>
+              <td><span class="lang-es">Google Analytics — mantiene el estado de la sesión.</span><span class="lang-en">Google Analytics — keeps session state.</span></td>
+              <td><span class="lang-es">2 años</span><span class="lang-en">2 years</span></td>
+            </tr>
+            <tr>
+              <td>lx-cookie-consent</td>
+              <td><span class="lang-es">Recuerda si aceptaste o rechazaste las cookies (almacenamiento local, no se comparte).</span><span class="lang-en">Remembers whether you accepted or rejected cookies (local storage, not shared).</span></td>
+              <td><span class="lang-es">Persistente</span><span class="lang-en">Persistent</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 5. Google Analytics / transferencia -->
+        <h2>
+          <span class="lang-es">5. Google Analytics y transferencia internacional</span>
+          <span class="lang-en">5. Google Analytics and international transfer</span>
+        </h2>
+        <p>
+          <span class="lang-es">Utilizamos Google Analytics, un servicio provisto por Google LLC. Activamos la anonimización de IP y el Modo de Consentimiento (Consent Mode v2) de Google. Esto puede implicar la transferencia de datos a servidores ubicados fuera de Argentina. Google trata estos datos conforme a sus propias políticas; podés consultarlas en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>. La Ley 25.326 admite estas transferencias cuando media tu consentimiento.</span>
+          <span class="lang-en">We use Google Analytics, a service provided by Google LLC. We enable IP anonymization and Google's Consent Mode v2. This may involve transferring data to servers located outside Argentina. Google processes this data under its own policies, available at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>. Law 25.326 allows such transfers when your consent is given.</span>
+        </p>
+
+        <!-- 6. Derechos del titular -->
+        <h2>
+          <span class="lang-es">6. Tus derechos como titular de los datos</span>
+          <span class="lang-en">6. Your rights as the data subject</span>
+        </h2>
+        <p>
+          <span class="lang-es">Conforme a la Ley 25.326, tenés derecho a <strong>acceder, rectificar, actualizar y suprimir</strong> tus datos personales. El ejercicio del derecho de acceso es gratuito a intervalos no inferiores a seis meses (art. 14). Para ejercerlos, escribinos a <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a> indicando tu solicitud.</span>
+          <span class="lang-en">Under Law 25.326, you have the right to <strong>access, rectify, update, and delete</strong> your personal data. Exercising the right of access is free of charge at intervals of no less than six months (art. 14). To exercise these rights, write to us at <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a> stating your request.</span>
+        </p>
+        <p>
+          <span class="lang-es">La <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, órgano de control de la Ley 25.326, tiene la atribución de atender denuncias y reclamos vinculados al incumplimiento de las normas sobre protección de datos personales. Más información en <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">argentina.gob.ar/aaip</a>.</span>
+          <span class="lang-en">The <strong>Agency for Access to Public Information (AAIP)</strong>, the supervisory body for Law 25.326, is empowered to handle complaints and claims related to non-compliance with personal data protection rules. More information at <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">argentina.gob.ar/aaip</a>.</span>
+        </p>
+
+        <!-- 7. Conservación y seguridad -->
+        <h2>
+          <span class="lang-es">7. Conservación y seguridad</span>
+          <span class="lang-en">7. Retention and security</span>
+        </h2>
+        <p>
+          <span class="lang-es">Conservamos tus datos únicamente durante el tiempo necesario para cumplir las finalidades descriptas o mientras mantengas tu consentimiento. Aplicamos medidas técnicas y organizativas razonables para proteger tus datos contra el acceso, la alteración o la divulgación no autorizados (art. 9 de la Ley 25.326).</span>
+          <span class="lang-en">We retain your data only for as long as necessary to fulfill the described purposes or while you maintain your consent. We apply reasonable technical and organizational measures to protect your data against unauthorized access, alteration, or disclosure (art. 9 of Law 25.326).</span>
+        </p>
+
+        <!-- 8. Cambios -->
+        <h2>
+          <span class="lang-es">8. Cambios en esta política</span>
+          <span class="lang-en">8. Changes to this policy</span>
+        </h2>
+        <p>
+          <span class="lang-es">Podemos actualizar esta política para reflejar cambios legales o técnicos. Publicaremos la versión vigente en esta página, indicando la fecha de última actualización.</span>
+          <span class="lang-en">We may update this policy to reflect legal or technical changes. We will publish the current version on this page, indicating the last update date.</span>
+        </p>
+
+        <hr class="legal-divider">
+
+        <!-- TÉRMINOS Y CONDICIONES -->
+        <h2 id="terminos">
+          <span class="lang-es">Términos y Condiciones de uso</span>
+          <span class="lang-en">Terms &amp; Conditions of use</span>
+        </h2>
+        <p>
+          <span class="lang-es">El acceso y uso de este sitio web (<strong>lunarix-dev-lab.github.io</strong>) implica la aceptación de los presentes Términos y Condiciones. El sitio tiene carácter informativo y presenta los servicios y productos de Lunarix.</span>
+          <span class="lang-en">Accessing and using this website (<strong>lunarix-dev-lab.github.io</strong>) implies acceptance of these Terms &amp; Conditions. The site is informational in nature and presents the services and products of Lunarix.</span>
+        </p>
+        <ul>
+          <li>
+            <span class="lang-es"><strong>Propiedad intelectual:</strong> los contenidos, marcas, logotipos, textos y diseño del sitio pertenecen a Lunarix y están protegidos por la Ley 11.723 de Propiedad Intelectual. No está permitida su reproducción sin autorización.</span>
+            <span class="lang-en"><strong>Intellectual property:</strong> the content, trademarks, logos, texts, and design of the site belong to Lunarix and are protected by Intellectual Property Law 11.723. Reproduction without authorization is not permitted.</span>
+          </li>
+          <li>
+            <span class="lang-es"><strong>Responsabilidad:</strong> la información se ofrece "tal cual" con fines orientativos. Lunarix no garantiza la ausencia de errores ni la disponibilidad ininterrumpida del sitio. Los enlaces a sitios de terceros (p. ej. demos, WhatsApp) se rigen por sus propias condiciones.</span>
+            <span class="lang-en"><strong>Liability:</strong> information is provided "as is" for guidance purposes. Lunarix does not guarantee the absence of errors or uninterrupted availability of the site. Links to third-party sites (e.g. demos, WhatsApp) are governed by their own terms.</span>
+          </li>
+          <li>
+            <span class="lang-es"><strong>Ley aplicable y jurisdicción:</strong> estos términos se rigen por las leyes de la República Argentina. Ante cualquier controversia, las partes se someten a los tribunales ordinarios de la Provincia de Mendoza, salvo disposición legal en contrario aplicable a consumidores (Ley 24.240 de Defensa del Consumidor).</span>
+            <span class="lang-en"><strong>Governing law and jurisdiction:</strong> these terms are governed by the laws of the Argentine Republic. In the event of any dispute, the parties submit to the ordinary courts of the Province of Mendoza, except where consumer law provides otherwise (Consumer Protection Law 24.240).</span>
+          </li>
+        </ul>
+        <p>
+          <span class="lang-es">Para cualquier consulta sobre estos términos, escribinos a <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a>.</span>
+          <span class="lang-en">For any inquiry about these terms, write to us at <a href="mailto:lunarixlab@gmail.com">lunarixlab@gmail.com</a>.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <section id="contact" style="padding-top:0;">
+    <div class="container">
+      <div class="contact-sep"></div>
+
+      <div class="footer-row">
+        <div class="footer-logo"><img src="LunarixPng.png" alt="Lunarix" class="footer-logo-img"></div>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/lunarixlabb/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@lunarixlab" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          <span>© 2025 Lunarix. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+          <span style="color:#6F6A8A; margin-top:0.2rem; display:block;">Mendoza, Argentina</span>
+          <span class="footer-legal">
+            <a href="privacidad.html"><span class="lang-es">Privacidad y Cookies</span><span class="lang-en">Privacy &amp; Cookies</span></a>
+            <span class="sep">·</span>
+            <a href="privacidad.html#terminos"><span class="lang-es">Términos</span><span class="lang-en">Terms</span></a>
+            <span class="sep">·</span>
+            <a href="#" class="cookie-settings-link"><span class="lang-es">Configurar cookies</span><span class="lang-en">Cookie settings</span></a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       COOKIE CONSENT BANNER
+  ============================== -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-inner">
+      <div class="cookie-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+          <path d="M8.5 8.5v.01"/>
+          <path d="M16 15.5v.01"/>
+          <path d="M12 12v.01"/>
+          <path d="M11 17v.01"/>
+          <path d="M7 14v.01"/>
+        </svg>
+      </div>
+      <div class="cookie-text">
+        <h3 class="cookie-title">
+          <span class="lang-es">Usamos cookies</span>
+          <span class="lang-en">We use cookies</span>
+        </h3>
+        <p>
+          <span class="lang-es">Utilizamos cookies de análisis (Google Analytics) para entender cómo se usa el sitio y mejorar tu experiencia. No se activan hasta que las aceptes. Más información en nuestra <a href="privacidad.html">Política de Privacidad y Cookies</a>.</span>
+          <span class="lang-en">We use analytics cookies (Google Analytics) to understand how the site is used and improve your experience. They stay off until you accept. Learn more in our <a href="privacidad.html">Privacy &amp; Cookie Policy</a>.</span>
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn reject" id="cookieReject" type="button">
+          <span class="lang-es">Rechazar</span>
+          <span class="lang-en">Reject</span>
+        </button>
+        <button class="cookie-btn accept" id="cookieAccept" type="button">
+          <span class="lang-es">Aceptar</span>
+          <span class="lang-en">Accept</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
