@@ -35,7 +35,40 @@
       "Bash(node v7.js)",
       "Bash(rm -f v7.js v_*.png)",
       "Bash(node v8.js)",
-      "Bash(rm -f v8.js v_*.png)"
+      "Bash(rm -f v8.js v_*.png)",
+      "Bash(git ls-remote *)",
+      "Bash(rm -rf /tmp/peek_repo)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(gh api *)",
+      "Bash(git ls-tree *)",
+      "WebFetch(domain:lunarix-dev-lab.github.io)",
+      "Bash(node prod_check.js)",
+      "Bash(node prod_check2.js)",
+      "Bash(curl -s -o /dev/null -w \"localhost status: %{http_code}\\\\n\" http://localhost:3002/)",
+      "Bash(node prod_check3.js)",
+      "Bash(node prod_check4.js)",
+      "Bash(node prod_check5.js)",
+      "Bash(node prod_check6.js)",
+      "Bash(rm -f prod_check*.js prod_*.png prod_index_source.html prod_styles_source.css dev_server.log)",
+      "Bash(npm uninstall *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s -o /dev/null -w \"status: %{http_code}\\\\n\" http://localhost:3002/productos.html)",
+      "Bash(curl -s -o /dev/null -w \"status: %{http_code}\\\\n\" http://localhost:3000/productos.html)",
+      "Bash(node v_check.js)",
+      "Bash(rm -f v_check.js v_products_*.png)",
+      "Bash(powershell -Command \"Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,StartTime\")",
+      "Bash(taskkill //F //IM node.exe //T)",
+      "Bash(git fetch *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)",
+      "Bash(rm -f v_check.js v_card_apple.png v_card_appt.png v_full.png)",
+      "Bash(rm -f v_check.js v_appt_card.png v_top.png v_fullpage.png)",
+      "Bash(rm -f v_check.js v_spotlight.png)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }

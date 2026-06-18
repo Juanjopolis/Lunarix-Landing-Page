@@ -558,11 +558,52 @@ nav.scrolled {
 ============================ */
 /* Lifted dark canvas — constellation pattern + asymmetric corner glow, distinct rhythm */
 #products {
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(circle, rgba(180,172,230,0.09) 1px, transparent 1.4px) 0 0/36px 36px,
     radial-gradient(ellipse 860px 540px at 14% -12%, rgba(111,98,196,0.17), transparent 60%),
     radial-gradient(ellipse 760px 560px at 102% 108%, rgba(83,128,199,0.14), transparent 58%),
     linear-gradient(160deg, #1E1A38 0%, #221C44 50%, #1A1532 100%);
+}
+/* Keep the page content above the interactive backdrop */
+#products > .container { position: relative; z-index: 1; }
+
+/*
+   Interactive spotlight — a soft reflector that trails the cursor across the
+   constellation. GPU-cheap on purpose: a single element moved only via
+   translate3d (compositor-only), no blur / blend-mode / box-shadow churn.
+   The radial-gradient is inherently soft, so no filter is needed.
+   Falls back to a calm ambient drift on touch / no-pointer devices.
+*/
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 560px;
+  height: 560px;
+  margin: -280px 0 0 -280px;          /* center the glow on its transform point */
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side,
+              rgba(132,120,212,0.20),
+              rgba(111,98,196,0.10) 46%,
+              transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(60vw, 34vh, 0);
+  will-change: transform;
+  animation: spotlight-idle 20s ease-in-out infinite;
+}
+/* Once the cursor takes control, JS drives the transform and the drift stops */
+.spotlight.is-tracking { animation: none; }
+
+@keyframes spotlight-idle {
+  0%, 100% { transform: translate3d(52vw, 26vh, 0); }
+  33%      { transform: translate3d(74vw, 52vh, 0); }
+  66%      { transform: translate3d(36vw, 46vh, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spotlight { animation: none; }
 }
 
 .products-header {
@@ -733,6 +774,54 @@ nav.scrolled {
 .pv-line { height: 7px; border-radius: 4px; background: rgba(255,255,255,0.09); margin-bottom: 0.45rem; }
 .pv-line.short { width: 58%; margin-bottom: 0; }
 
+/* LunarixAppointments visual — a booking agenda: week strip + time slots */
+.pv-week {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.32rem;
+  margin-bottom: 0.9rem;
+}
+.pv-week span {
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.pv-week span.on {
+  background: linear-gradient(135deg, rgba(111,98,196,0.55), rgba(83,128,199,0.40));
+  border-color: rgba(167,158,221,0.50);
+  animation: pv-day-glow 3.5s ease-in-out infinite;
+}
+@keyframes pv-day-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(111,98,196,0.35); }
+  50%      { box-shadow: 0 0 20px rgba(111,98,196,0.60); }
+}
+.pv-slot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.pv-slot:last-of-type { margin-bottom: 0; }
+.pv-slot-tick {
+  width: 24px;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.16);
+  flex-shrink: 0;
+}
+.pv-slot-bar {
+  flex: 1;
+  height: 17px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.pv-slot.booked .pv-slot-bar {
+  background: linear-gradient(135deg, rgba(111,98,196,0.32), rgba(83,128,199,0.18));
+  border-color: rgba(167,158,221,0.22);
+}
+
 .pv-badge {
   display: inline-flex;
   align-items: center;
@@ -807,7 +896,8 @@ nav.scrolled {
   gap: 0.5rem;
   margin-bottom: 1.875rem;
 }
-.product-feats span {
+/* Direct child only — the inner .lang-es/.lang-en spans must NOT get a second pill */
+.product-feats > span {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--ink);

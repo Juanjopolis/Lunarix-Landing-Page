@@ -251,3 +251,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     link.addEventListener('click', e => { e.preventDefault(); show(); });
   });
 })();
+
+
+/* ============================
+   INTERACTIVE SPOTLIGHT (productos page)
+   A soft reflector that smoothly trails the cursor across the constellation.
+   Performance by design: a single rAF loop writes only `transform` (compositor-
+   only — no layout, no paint), and the loop sleeps as soon as the glow settles,
+   so an idle mouse costs nothing. Touch / no-pointer devices keep the calm
+   ambient CSS drift instead.
+============================ */
+(function initSpotlight() {
+  const glow = document.querySelector('.spotlight');
+  if (!glow) return;
+
+  // Only fine-pointer (mouse) devices get cursor tracking; touch keeps CSS drift
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const section = glow.parentElement;   // #products
+  let targetX = 0, targetY = 0;         // cursor position, relative to the section
+  let curX = 0, curY = 0;               // eased position currently rendered
+  let raf = null;
+  let tracking = false;
+
+  function tick() {
+    curX += (targetX - curX) * 0.12;    // ease toward the cursor
+    curY += (targetY - curY) * 0.12;
+    glow.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
+    if (Math.abs(targetX - curX) > 0.4 || Math.abs(targetY - curY) > 0.4) {
+      raf = requestAnimationFrame(tick);
+    } else {
+      raf = null;                       // settled — stop until the cursor moves again
+    }
+  }
+
+  window.addEventListener('pointermove', e => {
+    const rect = section.getBoundingClientRect();
+    targetX = e.clientX - rect.left;
+    targetY = e.clientY - rect.top;
+    if (!tracking) {                    // first move: take over from the CSS drift
+      tracking = true;
+      curX = targetX;
+      curY = targetY;
+      glow.classList.add('is-tracking');
+    }
+    if (!raf) raf = requestAnimationFrame(tick);
+  }, { passive: true });
+})();
